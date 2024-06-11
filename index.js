@@ -4,9 +4,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import {fileURLToPath} from 'url'
 import path from 'path';
-// import productosRouter from "./src/routes/productos.routes.js";
-// import pedidosRouter from './src/routes/pedidos.routes.js';
-// import usuariosRouter from './src/routes/usuarios.routes.js';
+import usuariosRouter from './src/routes/usuarios.routes.js';
 import './src/database/database.js'
 
 const app = express()
@@ -24,3 +22,5 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 app.use(express.static((path.join(__dirname,'/public'))))
+
+app.use("/api",usuariosRouter)
