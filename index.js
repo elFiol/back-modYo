@@ -4,17 +4,14 @@ import cors from 'cors';
 import 'dotenv/config';
 import {fileURLToPath} from 'url'
 import path from 'path';
-// import productosRouter from "./src/routes/productos.routes.js";
-// import pedidosRouter from './src/routes/pedidos.routes.js';
-// import usuariosRouter from './src/routes/usuarios.routes.js';
-// import './src/database/database.js'
+import publicacionesRouter from "./src/routes/publicaciones.routes.js";
+import usuariosRouter from './src/routes/usuarios.routes.js';
 
 const app = express()
 app.set('port',process.env.PORT ||4000);
 app.listen(app.get('port'),()=>{
     console.log('Estoy en el puerto '+app.get('port'))
 })
-
 app.use(cors()); 
 app.use(morgan('dev')) 
 app.use(express.json()) 
@@ -24,3 +21,6 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 app.use(express.static((path.join(__dirname,'/public'))))
+
+app.use('/api',publicacionesRouter)
+app.use("/api",usuariosRouter)
