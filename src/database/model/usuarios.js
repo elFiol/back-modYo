@@ -41,17 +41,6 @@ const usuarioSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  perfilRGB: {
-    type: String,
-    required: true,
-    validate: {
-      validator: (value) => {
-        const pattern =
-          /^rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*(,\s*\d+(\.\d+)?\s*)?\)$/;
-        return pattern.test(value);
-      },
-    },
-  },
   suspendido: {
     type: Boolean,
     default: false,

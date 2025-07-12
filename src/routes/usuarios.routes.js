@@ -9,12 +9,12 @@ import {
   login,
   logout,
   suspenderUsuario,
-} from "../controllers/usuarios.controller.js";
+} from "../controllers/usuarios.controllers.js";
 import {
   validacionRegistroAdmin,
   validarEmail,
   validarUsuario,
-} from "../helper/validarUsuarios.js";
+} from "../helpers/validarUsuarios.js";
 
 
 const router = Router()

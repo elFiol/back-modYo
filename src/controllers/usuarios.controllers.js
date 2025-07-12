@@ -1,6 +1,6 @@
 import { Usuario } from "../database/model/usuarios.js";
 import bcrypt from "bcrypt";
-import generarJWT from "../helper/generarJWT.js";
+import generarJWT from "../helpers/generarJWT.js";
 
 const isActive = (body, boolean) => {
   const usuario = body;
