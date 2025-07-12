@@ -9,12 +9,12 @@ import {
   login,
   logout,
   suspenderUsuario,
-} from "../controllers/usuarios.controller.js";
+} from "../controllers/usuarios.controllers.js";
 import {
   validacionRegistroAdmin,
   validarEmail,
   validarUsuario,
-} from "../helper/validarUsuarios.js";
+} from "../helpers/validarUsuarios.js";
 
 
 const router = Router()
@@ -25,9 +25,9 @@ router
   .post([validacionRegistroAdmin], crearUsuarioAdmin);
 router.route("/usuarios").get(listarUsuarios);
 router.route("/suspenderUsuario").post([validarEmail], suspenderUsuario);
-router.route("/borrarUsuario").post([validarEmail], borrarUsuario);
+router.route("/borrarUsuario").delete([validarEmail], borrarUsuario);
 router.route("/habilitarUsuario").post([validarEmail], habilitarUsuario);
 router.route("/logout").post([validarEmail],logout);
-router.route("/isAdmin").post([validarEmail],isAdmin);
+router.route("/isAdmin").get([validarEmail],isAdmin);
 
 export default router;
