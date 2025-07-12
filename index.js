@@ -22,5 +22,5 @@ const __dirname = path.dirname(__filename)
 
 app.use(express.static((path.join(__dirname,'/public'))))
 
-app.use('/api',publicacionesRouter)
+// app.use('/api',publicacionesRouter)
 app.use("/api",usuariosRouter)
